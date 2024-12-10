@@ -7,7 +7,7 @@ The protagonist is a boy finding shelter for the night. Can he make it to the ne
 I have all the plot and the style of COVID-20 part 2. It will be a platformer with more action style gameplay.<br>
 Date of release: possibly never :) (too little time lol)<br>
 Update: I have returned to development, working on the graphics (I like this more so going back in would be much smoother and I would be able to stick around for longer :P)<br>
-Update update: I have refined a lot of the graphics, mainly just changing them to match a certain theme so it would be more uniform.
+Update update: I have refined a lot of the graphics, mainly just changing them to match a certain theme so it would be more uniform.<br>
 Update update update: Going to stop for a while for college :O
 <br><br>
 Links:
