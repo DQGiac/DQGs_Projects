@@ -57,11 +57,11 @@ var update = function (maps, ind) {
   fill(300 - p.timedustlevel * 1.3, p.timedustlevel * 0.3, 0);
   rect(width / 4 - 5, 7.5, (p.timedustlevel * width) / 4 / p.timedustmax, 25);
   fill(255);
-  textSize(40);
+  textSize(25);
   text(
     ((p.timedustlevel / p.timedustmax) * 100).toFixed(1),
     (width * 3) / 8,
-    17.5
+    20
   );
   rectMode(CENTER);
 
@@ -72,7 +72,7 @@ var update = function (maps, ind) {
   fill(188, 40, 40);
   rect(width / 2 + 5, 7.5, (p.corruptlevel * width) / 400, 25);
   fill(255);
-  text(p.corruptlevel.toFixed(1), (width * 5) / 8, 17.5);
+  text(p.corruptlevel.toFixed(1), (width * 5) / 8, 20);
   rectMode(CENTER);
 
   // fill(0, 255, 0);
@@ -108,17 +108,6 @@ var update = function (maps, ind) {
   }
   Particle(particles);
   tint(255, 255);
-
-  // fill(0);
-  // rect(p.x - addon, p.y, p.w, p.h);
-  // noFill();
-  // strokeWeight(blocksize);
-  // for (var i = 1; i < 29; i++) {
-  //   stroke(0, i * 25);
-  //   ellipse(p.x - addon, p.y, blocksize * 4 + blocksize * i * 2);
-  // }
-  // strokeWeight(1);
-  // noStroke();
 
   timer += 1;
   if (backtracking && !next) {
