@@ -10,9 +10,6 @@ function Particle(ob) {
     fill(particle.Color);
     rect(particle.x, particle.y, ob[i].w);
     ob[i].w -= 0.1;
-    if (ob[i].w <= 0) {
-      ob[i] = "";
-      break;
-    }
+    if (ob[i].w <= 0) ob[i] = "";
   }
 }
