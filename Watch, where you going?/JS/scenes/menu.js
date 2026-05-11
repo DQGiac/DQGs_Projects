@@ -6,8 +6,6 @@ function menu() {
   textFont(BoKi);
   textSize(40);
   textLeading(70);
-  // translate(width / 2, menubutton - 250)
-  // rotate(menubutton )
   fill(56, 102, 65);
   text("WATCH, WHERE\nYOU GOING?", width / 2 - 2, menubutton - 253);
   fill(255, 0, 0);
@@ -38,7 +36,7 @@ function menu() {
   );
   // buttonscene(menubutton, 440, width / 2, 40, "B O S S", "boss", () => {}, 2);
   fill(0);
-  textSize(50);
+  textSize(30);
   text("DELAG: " + (delag ? "ON" : "OFF"), width / 2, 1100 - menubutton);
   if (hover(300, 500, 680, 720)) {
     cursor(HAND);
