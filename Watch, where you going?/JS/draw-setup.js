@@ -13,11 +13,12 @@ var scene = "menu";
 var blocksize = 40;
 var next = false;
 var restarting = false;
+var reload = true;
 
 var pausing = false;
 function paused() {
   background(255, 200);
-  textSize(80);
+  textSize(60);
   fill(0);
   text("PAUSING...", width / 2 + 2, 152);
   fill(255, 0, 0);
@@ -67,15 +68,18 @@ var loaded = false;
 function draw() {
   cursor(AUTO);
   background(113, 207, 132);
-  if (scene == "menu") menu();
+  if (scene == "menu") {
+    reload = true;
+    menu();
+  }
   else if (scene == "story") story();
   else {
     if (scene == "game") {
       game();
       fill(0);
       textAlign(RIGHT);
-      textSize(20);
-      text("Framerate: " + frameRate().toFixed(0), width - 10, 10);
+      textSize(15);
+      text("Framerate: " + frameRate().toFixed(0), width - 5, 10);
       textAlign(CENTER, CENTER);
     } else if (scene == "boss") {
       bossfight();
@@ -87,8 +91,8 @@ function draw() {
       endAl = 0;
       addon = 0;
       if (scene == "game") {
-        levelindex = actuallevel;
-        fillLevel(levelmaps, levelindex);
+        gameindex = actuallevel;
+        fillLevel(gamemaps, gameindex);
         p.timedustlevel = p.leveltimedust;
         p.corruptlevel = p.levelcorrupt;
         p.collected = [];
@@ -96,7 +100,8 @@ function draw() {
         bossindex = 0;
         fillLevel(bossmaps, bossindex);
       } else if (scene == "tuto") {
-        tutoindex = 0;
+        if (tutoindex == 2) tutoindex = 2;
+        else tutoindex = 0;
         fillLevel(tutomaps, tutoindex);
       }
       p.logs = [];
@@ -116,16 +121,16 @@ function draw() {
         p.vx = 0;
         p.vy = 0;
         if (scene == "game") {
-          levelindex++;
-          actuallevel = levelindex;
-          fillLevel(levelmaps, levelindex);
+          gameindex++;
+          actuallevel = gameindex;
+          fillLevel(gamemaps, gameindex);
           p.leveltimedust = p.timedustlevel;
           p.levelcorrupt = p.corruptlevel;
           p.collected = [];
         } else if (scene == "tuto") {
-          tutorialindex++;
-          actuallevel = levelindex;
-          fillLevel(tutorialmaps, tutorialindex);
+          tutoindex++;
+          actuallevel = tutoindex;
+          fillLevel(tutomaps, tutoindex);
         }
       }
     }
@@ -135,11 +140,10 @@ function draw() {
     else {
       if (keys[82]) {
         level = [];
-        if (scene == "game") restarting = true;
-        else if (scene == "tuto") restarting = true;
+        if (scene == "game" || scene == "tuto") restarting = true;
       } else if (keys[32] && p.timedustlevel > 0 && !next) {
         backtracking = !backtracking;
-        particles = []
+        particles = [];
         keys[32] = false;
       }
     }
