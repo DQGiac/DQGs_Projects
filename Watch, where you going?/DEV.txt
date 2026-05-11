@@ -1,0 +1,25 @@
+22/03/2026:
+- Fixed bugs:
+  - Tutorial freezes when entering portal on the first level.
+  - When die in game and change to tutorial, it is also affected.
+  - When in tutorial and change to game, it still holds tutorial's map, only until pressing restart does it change back.
+  - Particles flicker.
+  - Restart in tutorial takes you back the first level.
+
+- Features:
+  - Added a cool effect for buttons.
+  - Improve delag mode.
+  - Changed the fonts to my font "smol"!
+
+Bugs!!
+- change the buttons to not run in delag mode
+- If you die and quickly go back to menu and go back to game/tuto -> the particles still there
+
+
+DEVELOPMENT!!
+- remake pixel art
+- sound effects
+- redo title card
+- jump timer
+- level design.
+- boss (not yet)
